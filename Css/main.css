@@ -45,3 +45,9 @@ body{
     align-items: center;
     gap:15px;
 }
+
+.header{
+    color:#F4F1ED;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
