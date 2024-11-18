@@ -1,30 +1,46 @@
 let $ = document;
 
-let inputValue = $.querySelector('.getTodo');
-let liElem = $.querySelector('.todo');
-let ulElem = $.querySelector('#List');
-let divElem = $.querySelector('.list');
+let inputElem = $.querySelector('.getTodo');
+let addTodoForm = $.querySelector('.addTodo');
+let ulTodoElem = $.querySelector('#List');
+
 let divAddTodo = $.querySelector('.addTodo');
 let pWrong = $.createElement('p');
 
 
-inputValue.addEventListener('keydown', function(event){
+
+function addNewTodo(newTodoValue){
+
+    let newTodoLi = $.createElement('li');
+    newTodoLi.className = 'todo';
+    
+    let newTodoSpan = $.createElement('span');
+    newTodoSpan.innerHTML = newTodoValue;
+
+    let newTodoTrash = $.createElement('i');
+    newTodoTrash.className = 'fa-solid fa-trash';
+    newTodoTrash.id = 'trash';
+
+    newTodoLi.append(newTodoSpan, newTodoTrash);
+    ulTodoElem.append(newTodoLi);
+}
+
+
+addTodoForm.addEventListener('submit', function(event){
+    event.preventDefault();
+});
+
+
+inputElem.addEventListener('keydown', function(event){
+
+    let newTodoValue = event.target.value.trim();
+
     if(event.key === "Enter"){
-        if(inputValue.value){
+        if(newTodoValue){
 
             pWrong.style.display = 'none';
-            let newLiItem = $.createElement('li');
-            let newSpan = $.createElement('span');
-            newSpan.innerHTML = inputValue.value;
-            let newIElem = $.createElement('i');
-            newIElem.className = 'fa-solid fa-trash';
-            newIElem.id = 'trash';
-            newLiItem.className = 'todo';
-
-            newLiItem.append(newSpan);
-            newLiItem.append(newIElem);
-            ulElem.append(newLiItem);
-            inputValue.value = '';
+            inputElem.value = '';
+            addNewTodo(newTodoValue);
 
         }else{
             pWrong.innerHTML = "Wrong! Please enter your desired job."
