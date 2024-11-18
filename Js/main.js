@@ -6,7 +6,7 @@ let ulTodoElem = $.querySelector('#List');
 
 let divAddTodo = $.querySelector('.addTodo');
 let pWrong = $.createElement('p');
-
+let divMassage = $.querySelector('.massage');
 
 
 function addNewTodo(newTodoValue){
@@ -23,6 +23,15 @@ function addNewTodo(newTodoValue){
 
     newTodoTrash.addEventListener('click', function(event){
         event.target.parentElement.remove();
+
+        setTimeout(function(){
+            divMassage.style.display = 'flex';
+        },0);
+
+        setTimeout(function(){
+            divMassage.style.display = 'none';
+        },2000);    
+        
     })
 
     newTodoLi.append(newTodoSpan, newTodoTrash);
