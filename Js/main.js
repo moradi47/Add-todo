@@ -8,7 +8,6 @@ let divAddTodo = $.querySelector('.addTodo');
 let pWrong = $.createElement('p');
 
 
-
 inputValue.addEventListener('keydown', function(event){
     if(event.key === "Enter"){
         if(inputValue.value){
@@ -19,6 +18,7 @@ inputValue.addEventListener('keydown', function(event){
             newSpan.innerHTML = inputValue.value;
             let newIElem = $.createElement('i');
             newIElem.className = 'fa-solid fa-trash';
+            newIElem.id = 'trash';
             newLiItem.className = 'todo';
 
             newLiItem.append(newSpan);
@@ -32,5 +32,13 @@ inputValue.addEventListener('keydown', function(event){
             pWrong.style.display = 'block';
             divAddTodo.append(pWrong);
         }
+    }
+})
+
+$.body.addEventListener('click', function(event){
+
+    if(event.target.id === 'trash'){
+        let trashIcon = event.target;
+        trashIcon.parentElement.remove();
     }
 })
