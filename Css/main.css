@@ -21,3 +21,15 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.todo{
+    width:350px;
+    height: 40px;
+    background-color: #423A6F;
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding:10px 15px;
+    border-bottom: 1px solid #242C40;
+    color:#F4F1ED;
+}
