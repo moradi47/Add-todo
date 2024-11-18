@@ -22,6 +22,10 @@ body{
     align-items: center;
 }
 
+.list{
+    margin-bottom: 32px;
+}
+
 .todo{
     width:350px;
     height: 40px;
