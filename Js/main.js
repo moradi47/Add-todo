@@ -21,6 +21,10 @@ function addNewTodo(newTodoValue){
     newTodoTrash.className = 'fa-solid fa-trash';
     newTodoTrash.id = 'trash';
 
+    newTodoTrash.addEventListener('click', function(event){
+        event.target.parentElement.remove();
+    })
+
     newTodoLi.append(newTodoSpan, newTodoTrash);
     ulTodoElem.append(newTodoLi);
 }
@@ -48,13 +52,5 @@ inputElem.addEventListener('keydown', function(event){
             pWrong.style.display = 'block';
             divAddTodo.append(pWrong);
         }
-    }
-})
-
-$.body.addEventListener('click', function(event){
-
-    if(event.target.id === 'trash'){
-        let trashIcon = event.target;
-        trashIcon.parentElement.remove();
     }
 })
