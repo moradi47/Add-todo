@@ -51,3 +51,12 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
 }
+
+.getTodo{
+    width:350px ;
+    height: 35px;
+    background-color: #242C40;
+    color:#F4F1ED;
+    border:none;
+    border-radius: 3px;
+}
